@@ -1,0 +1,7 @@
+lib/egl
+vendor
+usr/idc
+usr/keychars
+usr/keylayout
+usr/share
+bin/ip

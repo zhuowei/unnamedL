@@ -1,0 +1,33 @@
+# repacks boot.img. Needs stock 4.4.2 boot image. Should be root
+# needed files:
+# boot.img
+# kernel_orig
+rm -r boot-staging
+mkdir boot-staging
+cd boot-staging
+# plan: get the LNX from boot.img placed above us
+#/home/zhuowei/Documents/winprogress/droid/unbootimg/unbootimg ../boot.img
+#rm kernel.img
+#mv ramdisk.img ramdisk.gz
+cp ../ramdisk.img ramdisk.gz
+gunzip ramdisk.gz
+cpio -i <ramdisk
+rm ramdisk
+BOOT=.
+cp ../boot-overlay/default.prop ./
+sed -e "s/\/realdata\/local\/bin\/healthd/\/sbin\/healthd/" ../boot-overlay/init.rc >init.rc
+cp ../boot-overlay/healthd-real ./sbin/healthd
+cp ../boot-overlay/main_init ./init
+chmod 644 $BOOT/default.prop
+chmod 750 $BOOT/init.rc
+chmod 750 $BOOT/sbin/healthd
+chmod 750 $BOOT/init
+
+find .|cpio -o -H newc >../ramdisk-staging
+mv ../ramdisk-staging ramdisk
+gzip ramdisk
+mv ramdisk.gz ramdisk.img
+cp ../kernel_orig/kernel/zImage kernel.img
+
+mkbootimg --kernel kernel.img --ramdisk ramdisk.img -o boot.img
+mv boot.img ../packdir/

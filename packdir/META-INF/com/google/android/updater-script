@@ -1,4 +1,4 @@
-assert(getprop("ro.product.device") == "grouper" || getprop("ro.build.product") == "tilapia");
+assert(getprop("ro.product.device") == "grouper" || getprop("ro.build.product") == "grouper" || getprop("ro.product.device") == "tilapia" || getprop("ro.build.product") == "tilapia" );
 format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "0", "/system");
 mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
 ui_print("Extracting scripts...");
@@ -23,7 +23,7 @@ delete("/tmp/gnutar");
 delete_recursive("/tmp/rom");
 
 ui_print("Extracting boot.img...");
-package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+package_extract_file("boot.img", "/dev/block/platform/sdhci-tegra.3/by-name/LNX");
 ui_print("Setting xattrs...");
 set_metadata("/system", "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/lost+found", "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");

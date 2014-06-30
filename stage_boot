@@ -16,10 +16,12 @@ rm ramdisk
 BOOT=.
 cp ../boot-overlay/default.prop ./
 sed -e "s/\/realdata\/local\/bin\/healthd/\/sbin\/healthd/" ../boot-overlay/init.rc >init.rc
+cp ../boot-overlay/init.environ.rc ./
 cp ../boot-overlay/healthd-real ./sbin/healthd
 cp ../boot-overlay/main_init ./init
 chmod 644 $BOOT/default.prop
 chmod 750 $BOOT/init.rc
+chmod 750 $BOOT/init.environ.rc
 chmod 750 $BOOT/sbin/healthd
 chmod 750 $BOOT/init
 

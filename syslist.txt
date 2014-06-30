@@ -11,6 +11,7 @@ usr/idc
 usr/keychars
 usr/share
 bin/ip
+bin/wpa_supplicant
 etc/audio_policy.conf
 etc/bluetooth
 etc/clatd.conf

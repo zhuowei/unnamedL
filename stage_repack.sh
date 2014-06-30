@@ -1,3 +1,10 @@
+#!/bin/sh
+if [ `whoami` != "root" ]
+then
+	echo "Run this as root"
+	echo "sudo $0"
+	exit
+fi
 # this should be run as root
 rm -r staging staging2
 sed -e "s/\/sdcard\/multirom\/roms\/repacked\/system\//staging\//" perms_pulled.sh >reperm.sh

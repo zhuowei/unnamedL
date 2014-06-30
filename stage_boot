@@ -1,3 +1,10 @@
+#!/bin/sh
+if [ `whoami` != "root" ]
+then
+	echo "Run this as root"
+	echo "sudo $0"
+	exit
+fi
 # repacks boot.img. Needs stock 4.4.2 boot image. Should be root
 # needed files:
 # boot.img
@@ -31,5 +38,5 @@ gzip ramdisk
 mv ramdisk.gz ramdisk.img
 cp ../kernel_orig/kernel/zImage kernel.img
 
-mkbootimg --kernel kernel.img --ramdisk ramdisk.img -o boot.img
+../BootTools/mkbootimg --kernel kernel.img --ramdisk ramdisk.img -o boot.img
 mv boot.img ../packdir/

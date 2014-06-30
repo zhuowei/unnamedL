@@ -1,0 +1,2 @@
+http://fs1.d-h.st/download/00088/oG4/kernel_kexec_grouper_441.zip
+https://dl-ssl.google.com/android/repository/sys-img/android/sysimg_armv7a-L_r01.zip

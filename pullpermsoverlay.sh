@@ -9,5 +9,6 @@ do
 	fi
 	echo "chmod $perm $ROMDIR$a" >>perms_pulled.sh
 done
-
+echo "# from predefined perms" >>perms_pulled.sh
+cat perms_predefined.sh >>perms_pulled.sh
 #|xargs -I POTATO adb shell stat POTATO|grep -o "Access: (\([0-7]*\)"|cut -c 10- >>perms_pulled.sh

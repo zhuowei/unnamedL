@@ -13,3 +13,4 @@ cd sysdir
 tar xf ../packdir/rom/system.tar.gz
 cd ..
 git checkout -- packdir
+7z -okoushsuperuser x superuser.zip

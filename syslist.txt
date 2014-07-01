@@ -2,7 +2,9 @@ lib/egl
 lib/hw
 lib/libaudioroute.so
 lib/libhardware_legacy.so
+lib/libiprouteutil.so
 lib/libnetcmdiface.so
+lib/libnetlink.so
 lib/libril-icera.so
 lib/libtinyalsa.so
 lib/libwpa_client.so

@@ -1416,9 +1416,9 @@ set_metadata("/system/vendor/pittpatt/models/recognition/face.face.y0-y0-22-b-N-
 set_metadata("/system/xbin", "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/dexdump", "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 
-ui_print("Working around stuff to fix SuperSU...");
-run_program("/sbin/mv", "/system/bin/install-recovery.sh", "/system/bin/install-recovery-2.sh");
-symlink("../etc/install-recovery.sh", "/system/bin/install-recovery.sh");
+#ui_print("Working around stuff to fix SuperSU...");
+#run_program("/sbin/mv", "/system/bin/install-recovery.sh", "/system/bin/install-recovery-2.sh");
+#symlink("../etc/install-recovery.sh", "/system/bin/install-recovery.sh");
 
 unmount("/system");
 ui_print("Installation complete!");

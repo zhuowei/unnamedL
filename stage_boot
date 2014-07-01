@@ -36,7 +36,7 @@ find .|cpio -o -H newc >../ramdisk-staging
 mv ../ramdisk-staging ramdisk
 gzip ramdisk
 mv ramdisk.gz ramdisk.img
-cp ../kernel_orig/kernel/zImage kernel.img
+cp ../legokernel/zImage kernel.img
 
 ../BootTools/mkbootimg --kernel kernel.img --ramdisk ramdisk.img -o boot.img
 mv boot.img ../packdir/

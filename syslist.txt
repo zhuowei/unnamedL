@@ -3,9 +3,7 @@ lib/hw
 lib/libaudioroute.so
 lib/libhardware_legacy.so
 lib/libiprouteutil.so
-lib/libnetcmdiface.so
 lib/libnetlink.so
-lib/libril-icera.so
 lib/libtinyalsa.so
 lib/libwpa_client.so
 vendor
@@ -21,7 +19,6 @@ etc/gps.conf
 etc/media_codecs.xml
 etc/media_profiles.xml
 etc/mixer_paths.xml
-etc/nfcee_access.xml
 etc/wifi
 etc/permissions/android.hardware.camera.front.xml
 etc/permissions/android.hardware.location.gps.xml
@@ -37,7 +34,6 @@ etc/permissions/android.software.live_wallpaper.xml
 etc/permissions/android.software.sip.voip.xml
 etc/permissions/com.android.location.provider.xml
 etc/permissions/com.android.media.remotedisplay.xml
-etc/permissions/com.android.nfc_extras.xml
 etc/permissions/com.google.android.maps.xml
 etc/permissions/com.google.android.media.effects.xml
 etc/permissions/com.google.widevine.software.drm.xml

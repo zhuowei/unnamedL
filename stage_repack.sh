@@ -16,6 +16,6 @@ rm -r staging2/lib/egl
 rm -r staging2/vendor/lib/egl
 rsync -a staging/ staging2/
 cd staging2
-tar cf ../staging.tar.gz .
+tar czf ../staging.tar.gz .
 cd ..
 mv staging.tar.gz packdir/rom/system.tar.gz
